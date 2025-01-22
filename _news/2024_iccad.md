@@ -6,5 +6,3 @@ related_posts: false
 ---
 
 Two papers are accepted by ICCAD 2024!
-
-
