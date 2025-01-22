@@ -4,7 +4,7 @@ date: 2025-01-01 8:00:00-0400
 inline: true
 related_posts: false
 ---
- <!-- <img src="./assets/img/Meta-Logo.png" alt="Meta Logo" style="width:70px;"> -->
-I will work on **Movie Generation's optimization** at Meta AI during this summer in Seattle!
+
+I will work on **Movie Generation's optimization** at  <img src="assets/img/Meta-Logo.png" alt="Meta Logo" style="width:70px;"> during this summer in Seattle!
 
 
