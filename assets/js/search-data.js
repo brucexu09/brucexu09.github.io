@@ -377,12 +377,7 @@ ninja.data = [{
           section: "News",},{id: "news-two-papers-are-accepted-by-iccad-2024",
           title: 'Two papers are accepted by ICCAD 2024!',
           description: "",
-          section: "News",},{id: "news-2024-summer-intern-end",
-          title: '2024_summer_intern_end',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/2024_summer_intern_end/";
-            },},{id: "news-our-work-spiking-transformer-accelerators-in-3d-integration-is-nominated-as-william-j-mccalla-best-paper-award-at-iccad-24",
+          section: "News",},{id: "news-our-work-spiking-transformer-accelerators-in-3d-integration-is-nominated-as-william-j-mccalla-best-paper-award-at-iccad-24",
           title: 'Our Work “Spiking Transformer Accelerators in 3D Integration” is nominated as William J....',
           description: "",
           section: "News",},{id: "news-this-summer-i-will-join-working-on-efficient-movie-generation-in-seattle",
