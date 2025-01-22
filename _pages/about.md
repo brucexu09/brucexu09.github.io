@@ -24,7 +24,7 @@ social: true # includes social icons at the bottom of the page
 <!-- (https://www.cse.cuhk.edu.hk/~byu/) -->
 I'm third-year PhD candidate in **Electrical and Computer Engineering** from **UC Santa Barbara**, advised by Prof.Peng Li. My research interest lies in the intersection of machine learning and computer architecture. Specifically, **Brain-inspired Machine Learning** and **Efficient ML/LLM computing systems**. 
 
-Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw and [Prof.Dennis Sylvester](https://sylvester.engin.umich.edu/), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by Prof.Bei Yu at CUHK and [Prof.Udo Schwingenschlögl](https://www.kaust.edu.sa/en/study/faculty/udo-schwingenschlogl) at KAUST.
+Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw and [Prof.Dennis Sylvester](https://sylvester.engin.umich.edu/), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by [Prof.Bei Yu](https://www.cse.cuhk.edu.hk/~byu/) at CUHK and [Prof.Udo Schwingenschlögl](https://www.kaust.edu.sa/en/study/faculty/udo-schwingenschlogl) at KAUST.
 
 <span style="color: red; font-weight: bold;">I'm actively looking for research discussion and collaboration focused on Generative Model's efficiency issues and general applications. Feel free to reach out and keep in touch for future opportunities!
 
