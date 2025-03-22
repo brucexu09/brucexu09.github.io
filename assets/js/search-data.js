@@ -383,7 +383,7 @@ ninja.data = [{
           section: "News",},{id: "news-this-summer-i-will-join-working-on-efficient-movie-generation-in-seattle",
           title: 'This summer, I will join , working on Efficient Movie Generation in Seattle!...',
           description: "",
-          section: "News",},{id: "news-our-work-spikex-exploring-accelerator-architecture-and-network-hardware-co-optimization-for-sparse-spiking-neural-networks-has-been-accepted-by-ieee-transactions-on-computer-aided-design-of-integrated-circuits-and-systems-tcad-as-a-regular-paper",
+          section: "News",},{id: "news-our-work-spikex-exploring-accelerator-architecture-and-network-hardware-co-optimization-for-sparse-spiking-neural-networks-has-been-accepted-by-ieee-transactions-on-computer-aided-design-of-integrated-circuits-and-systems-tcad-as-a-long-paper",
           title: 'Our Work “SpikeX: Exploring Accelerator Architecture and Network-Hardware Co-Optimization for Sparse Spiking Neural...',
           description: "",
           section: "News",},{id: "news-my-paper-has-been-accepted-by-international-symposium-on-computer-architecture-isca-25",
