@@ -22,12 +22,13 @@ social: true # includes social icons at the bottom of the page
 <!-- #(https://web.ece.ucsb.edu/~lip/) -->
 <!-- (https://blaauw.engin.umich.edu/) -->
 <!-- (https://www.cse.cuhk.edu.hk/~byu/) -->
-I'm a third-year PhD candidate in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof.Peng Li. My research interest focuses on the intersection of machine learning and computer architecture. Specifically, Brain-inspired Machine Learning,  Efficient ML/LLM computing systems and Multimodal generation. I received **Best Paper Award Nomination** at ICCAD 2024. I also interned at Meta during the summers of 2024 and 2025.
+I'm a third-year PhD candidate in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof.Peng Li (Fellow of IEEE). My research interest focuses on the intersection of machine learning and computer architecture. Specifically, Brain-inspired Machine Learning,  Efficient ML/LLM computing systems and Multimodal generation. I received **Best Paper Award Nomination** at ICCAD 2024. I also interned at Meta in 2024 and 2025.
 
-Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw and Prof.Dennis Sylvester, and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST.
+Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw (Fellow of IEEE) and Prof.Dennis Sylvester (Fellow of IEEE), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST.
 
 <span style="color: red; font-weight: bold;">I'm actively looking for research discussion and collaboration focused on Generative Model's efficiency issues and general applications. Feel free to reach out and keep in touch for future opportunities!
 
+I am also seeking industrial positions starting Fall 2026. Feel free to reach out via email (boxunxu AT ucsb.edu) if there are opportunities aligned with my expertise.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
