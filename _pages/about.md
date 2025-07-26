@@ -22,7 +22,7 @@ social: true # includes social icons at the bottom of the page
 <!-- #(https://web.ece.ucsb.edu/~lip/) -->
 <!-- (https://blaauw.engin.umich.edu/) -->
 <!-- (https://www.cse.cuhk.edu.hk/~byu/) -->
-I'm third-year PhD candidate in **Electrical and Computer Engineering** from **UC Santa Barbara**, advised by Prof.Peng Li. My research interest lies in the intersection of machine learning and computer architecture. Specifically, **Brain-inspired Machine Learning** and **Efficient ML/LLM computing systems**. 
+I'm third-year PhD candidate in **Electrical and Computer Engineering** from **UC Santa Barbara**, advised by Prof.Peng Li. My research interest lies in the intersection of machine learning and computer architecture. Specifically, **Brain-inspired Machine Learning**,  **Efficient ML/LLM computing systems** and **Multimodal generation**. I received **Best Paper Award Nomination** at ICCAD 2024.
 
 Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw and Prof.Dennis Sylvester, and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST.
 
