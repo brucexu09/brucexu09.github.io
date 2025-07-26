@@ -28,7 +28,7 @@ Before this, I received my M.S. degree in Electrical and Computer Engineering fr
 
 <span style="color: red; font-weight: bold;">I'm actively looking for research discussion and collaboration focused on Generative Model's efficiency issues and general applications. Feel free to reach out and keep in touch for future opportunities!
 
-I am also seeking industrial positions starting Fall 2026. Feel free to reach out via email (boxunxu AT ucsb.edu) if there are opportunities aligned with my expertise.
+<!-- I am also seeking industrial positions starting Fall 2026. Feel free to reach out via email (boxunxu AT ucsb.edu) if there are opportunities aligned with my expertise. -->
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
