@@ -22,7 +22,7 @@ social: true # includes social icons at the bottom of the page
 <!-- #(https://web.ece.ucsb.edu/~lip/) -->
 <!-- (https://blaauw.engin.umich.edu/) -->
 <!-- (https://www.cse.cuhk.edu.hk/~byu/) -->
-I am a fourth-year Ph.D. student in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof. Peng Li (Fellow of IEEE). My research interest focuses on the intersection of machine learning and computer architecture. Specifically, brain-inspired machine learning, efficient computing systems, and multimodal content generation. I received consecutive **Best Paper Award Nomination** at ICCAD 2024 and ICCAD 2025. I also completed research internships at Meta in 2024 and at Meta SuperIntelligence Labs in 2025. 
+I am a fourth-year Ph.D. student in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof. Peng Li (Fellow of IEEE). My research interest focuses on the intersection of machine learning and computer architecture. Specifically, **brain-inspired machine learning**, **efficient ML systems**, and **multimodal content generation**. I received consecutive **Best Paper Award Nomination** at **ICCAD 2024** and **ICCAD 2025**. I also completed research internships at Meta in 2024 and at Meta SuperIntelligence Labs in 2025. 
 
 Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw (Fellow of IEEE) and Prof.Dennis Sylvester (Fellow of IEEE), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST.
 
