@@ -22,12 +22,21 @@ social: true # includes social icons at the bottom of the page
 <!-- #(https://web.ece.ucsb.edu/~lip/) -->
 <!-- (https://blaauw.engin.umich.edu/) -->
 <!-- (https://www.cse.cuhk.edu.hk/~byu/) -->
-I am a fourth-year Ph.D. student in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof. Peng Li (Fellow of IEEE). My research interest focuses on the intersection of machine learning and computer architecture. Specifically, **brain-inspired machine learning**, **efficient ML systems**, and **multimodal content generation**. I received consecutive **Best Paper Award Nomination** at **ICCAD 2024** and **ICCAD 2025**. I also completed research internships at Meta in 2024 and at Meta SuperIntelligence Labs in 2025. 
+I am a final-year Ph.D. student in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof.Peng Li (IEEE Fellow). My research interests focus on the intersection of machine learning and computer architecture. Specifically, **brain-inspired machine learning**, **efficient ML systems**, and **multimodal content generation**.
+I received consecutive **William J. McCalla Best Paper Award** nominations at ICCAD 2024 and ICCAD 2025.
+I also completed research internships at Meta in 2024 and at Meta Superintelligence Labs(MSL) in 2025.
 
-Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, advised by Prof.David Blaauw (Fellow of IEEE) and Prof.Dennis Sylvester (Fellow of IEEE), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST.
+Since 2025, my research has focused on efficient and scalable multimodal generative models and world models.
 
-<span style="color: red; font-weight: bold;"> 
-Since 2025, my research has focused on efficient and scalable world models. I am always open to research discussions and collaborations on the efficiency and scalability of generative models and their applications. Feel free to reach out to connect or explore potential future opportunities.
+I received my M.S. in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. David Blaauw (IEEE Fellow) and Prof. Dennis Sylvester (IEEE Fellow), and my B.S. in Electronic Engineering from the University of Electronic Science and Technology of China.
+
+<!-- I previously received my M.S. degree in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. David Blaauw (IEEE Fellow) and Prof. Dennis Sylvester (IEEE Fellow), and my B.S. degree in Electronic Engineering from the University of Electronic Science and Technology of China. -->
+
+<!-- Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, fortunately advised by Prof.David Blaauw (IEEE Fellow) and Prof.Dennis Sylvester (IEEE Fellow), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, fortunately advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST. -->
+
+<!-- <span style="color: red; font-weight: bold;"> 
+I am on the 2026 academic/industry job market.  -->
+<!-- always open to research discussions and collaborations on the efficiency and scalability of generative models and their applications. Feel free to reach out to connect or explore potential future opportunities. -->
 
 <!-- I am also seeking industrial positions starting Fall 2026. Feel free to reach out via email (boxunxu AT ucsb.edu) if there are opportunities aligned with my expertise. -->
 
