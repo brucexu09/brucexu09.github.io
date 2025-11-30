@@ -457,6 +457,13 @@ ninja.data = [{
           window.open("mailto:%62%6F%78%75%6E%78%75@%75%63%73%62.%65%64%75", "_blank");
         },
       },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/boxun-x-865232154", "_blank");
+        },
+      },{
         id: 'social-orcid',
         title: 'ORCID',
         section: 'Socials',
