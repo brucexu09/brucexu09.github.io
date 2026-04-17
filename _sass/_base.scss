@@ -741,9 +741,9 @@ footer.sticky-bottom {
     color: var(--global-theme-color);
     font-weight: 700;
     letter-spacing: 0.01em;
-    padding: 0.25rem 0.9rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1.2rem;
+    padding: 0.2rem 0.9rem;
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
     border-left: 4px solid var(--global-theme-color);
     background: linear-gradient(
       90deg,
@@ -754,23 +754,23 @@ footer.sticky-bottom {
   }
 
   h2.pillar {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   h3.pillar {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   h2.category,
   h3.category {
     color: var(--global-text-color-light);
     font-weight: 500;
-    margin-top: 2rem;
-    margin-bottom: 0.8rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   h3.category {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   ol.bibliography {
@@ -779,7 +779,7 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
 
       .preview {
         max-height: 120px;
