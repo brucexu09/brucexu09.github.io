@@ -46,6 +46,9 @@
 
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-7{% else %}col-sm-10{% endif %}">
+    {% if entry.award %}
+      <div class="award-prefix">🏆 {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+    {% endif %}
     <!-- Title -->
     <div class="title">{% if entry.representative %}<span class="representative-star" title="Representative work">★</span> {% endif %}{{ entry.title }}</div>
     <!-- Author -->
@@ -183,11 +186,6 @@
     </div>
     {% if entry.takeaway %}
       <div class="takeaway">{{ entry.takeaway }}</div>
-    {% endif %}
-    {% if entry.award %}
-      <div class="award-text">
-        🏆 {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' }}
-      </div>
     {% endif %}
 
     <!-- Links/Buttons -->
