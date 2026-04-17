@@ -1026,6 +1026,193 @@ html.transition *:after {
       }
     }
   }
+
+  // Lilian Weng-inspired reading layout
+  .post-header {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    .post-title {
+      font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.6rem;
+      color: var(--global-text-color);
+    }
+  }
+
+  .post-content {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--global-text-color);
+
+    p {
+      margin-bottom: 1.1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--global-text-color);
+      scroll-margin-top: 80px;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-top: 2.4rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+    h4 {
+      font-size: 1.05rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    a {
+      color: var(--global-theme-color);
+      text-decoration: none;
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+      transition: border-color 0.15s ease;
+
+      &:hover {
+        border-bottom-color: var(--global-theme-color);
+      }
+    }
+
+    blockquote {
+      background: transparent;
+      border-left: 3px solid var(--global-divider-color);
+      padding: 0.2rem 0 0.2rem 1rem;
+      margin: 1.3rem 0;
+      font-size: 1rem;
+      color: var(--global-text-color-light);
+      font-style: italic;
+    }
+
+    code {
+      font-size: 0.9em;
+      padding: 2px 5px;
+      background-color: var(--global-code-bg-color);
+      color: var(--global-text-color);
+      border-radius: 3px;
+    }
+
+    pre {
+      border-radius: 6px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      background-color: var(--global-code-bg-color);
+      overflow-x: auto;
+
+      code {
+        font-size: inherit;
+        padding: 0;
+        background: transparent;
+        color: inherit;
+      }
+    }
+
+    figure.highlight,
+    div.highlighter-rouge {
+      margin: 1.2rem 0 1.4rem;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.1rem;
+
+      li {
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    table {
+      width: 100%;
+      margin: 1.2rem 0 1.6rem;
+      font-size: 0.95rem;
+
+      th,
+      td {
+        padding: 0.55rem 0.8rem;
+        border-bottom: 1px solid var(--global-divider-color);
+        text-align: left;
+      }
+      th {
+        border-bottom: 2px solid var(--global-text-color);
+        font-weight: 600;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 1.4rem auto;
+      border-radius: 4px;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border: 0;
+      border-top: 1px solid var(--global-divider-color);
+    }
+
+    // MathJax display equations: a touch more breathing room
+    mjx-container[jax="CHTML"][display="true"] {
+      margin: 1.1rem 0;
+    }
+
+    // Footnote back-refs & list
+    .footnotes {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--global-divider-color);
+      font-size: 0.9rem;
+      color: var(--global-text-color-light);
+
+      ol {
+        padding-left: 1.2rem;
+      }
+    }
+    sup a {
+      border-bottom: none;
+    }
+  }
 }
 
 progress {
