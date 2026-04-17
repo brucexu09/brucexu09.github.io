@@ -21,7 +21,7 @@ nav_order: 2
 <h2 class="pillar">Hardware/Algorithm Co-design and EDA</h2>
 {% bibliography --query @*[category=codesign]* --group_by none %}
 
-<h2 class="category">Others</h2>
+<h2 class="category">Other Publications</h2>
 {% bibliography --query @*[category=others]* --group_by none %}
 
 </div>
