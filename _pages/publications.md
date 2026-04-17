@@ -16,12 +16,12 @@ nav_order: 2
 <div class="publications">
 
 <h2 class="pillar">Efficient Generative Modeling</h2>
-{% bibliography --query @*[category=generative]* %}
+{% bibliography --query @*[category=generative]* --group_by none %}
 
 <h2 class="pillar">Hardware/Algorithm Co-design and EDA</h2>
-{% bibliography --query @*[category=codesign]* %}
+{% bibliography --query @*[category=codesign]* --group_by none %}
 
 <h2 class="category">Others</h2>
-{% bibliography --query @*[category=others]* %}
+{% bibliography --query @*[category=others]* --group_by none %}
 
 </div>
