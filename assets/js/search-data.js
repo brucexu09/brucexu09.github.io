@@ -3,20 +3,38 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-home",
+    title: "Home",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
-          title: "publications",
-          description: "publications grouped by research pillar.",
+  },{id: "nav-research",
+          title: "Research",
+          description: "Publications grouped by research pillar.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-a-post-with-image-galleries",
+        },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "post-从-ppo-到-search-r1-reasoning-与-agentic-rl-的设计空间",
+      
+        title: "从 PPO 到 Search-R1：Reasoning 与 Agentic RL 的设计空间",
+      
+      description: "按组件拆解 PPO，然后沿 GRPO、Verifier、Retrieved Token Masking 一路梳理到 Agentic RL 的完整实例",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-ppo-to-search-r1-v2/";
+        
+      },
+    },{id: "post-a-post-with-image-galleries",
       
         title: "a post with image galleries",
       
