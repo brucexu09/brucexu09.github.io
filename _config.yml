@@ -89,8 +89,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Notes
+blog_description: research notes on ML systems, efficient generation, and RL
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -269,8 +269,8 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: [] # tags shown on blog front page
+display_categories: [] # categories shown on blog front page
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
