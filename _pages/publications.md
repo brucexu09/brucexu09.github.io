@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: publications grouped by research pillar.
+title: Research
+description: Publications grouped by research pillar.
 nav: true
 nav_order: 2
 ---
