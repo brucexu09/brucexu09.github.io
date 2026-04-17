@@ -30,6 +30,13 @@ Since 2025, my research has focused on efficient and scalable multimodal generat
 
 I received my M.S. in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. David Blaauw (IEEE Fellow) and Prof. Dennis Sylvester (IEEE Fellow), and my B.S. in Electronic Engineering from the University of Electronic Science and Technology of China.
 
+<div class="research-focus">
+  <span class="focus-label">Research focus</span>
+  <a class="focus-chip" href="/publications/#efficient-generative-modeling">Efficient Generative Modeling</a>
+  <a class="focus-chip" href="/publications/#hardware-algorithm-co-design-and-eda">HW/Algorithm Co-design &amp; EDA</a>
+  <a class="focus-chip" href="/publications/#efficient-generative-modeling">Multimodal &amp; World Models</a>
+</div>
+
 <!-- I previously received my M.S. degree in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. David Blaauw (IEEE Fellow) and Prof. Dennis Sylvester (IEEE Fellow), and my B.S. degree in Electronic Engineering from the University of Electronic Science and Technology of China. -->
 
 <!-- Before this, I received my M.S. degree in Electrical and Computer Engineering from University of Michigan, Ann Arbor, fortunately advised by Prof.David Blaauw (IEEE Fellow) and Prof.Dennis Sylvester (IEEE Fellow), and B.S. in Electronic Engineering from University of Electronic Science and Technology of China, fortunately advised by Prof.Bei Yu at CUHK and Prof.Udo Schwingenschlögl at KAUST. -->
