@@ -778,10 +778,28 @@ footer.sticky-bottom {
       }
 
       .takeaway {
+        display: inline-block;
         color: var(--global-theme-color);
-        font-size: 0.9rem;
-        margin-top: 0.15rem;
-        margin-bottom: 0.2rem;
+        font-size: 0.88rem;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        padding: 0.25rem 0.75rem;
+        margin: 0.35rem 0 0.3rem 0;
+        border-left: 3px solid var(--global-theme-color);
+        background: linear-gradient(
+          90deg,
+          color-mix(in srgb, var(--global-theme-color) 8%, transparent),
+          transparent 85%
+        );
+        border-radius: 2px;
+
+        &::before {
+          content: "✦ ";
+          font-style: normal;
+          margin-right: 0.15rem;
+          opacity: 0.85;
+        }
       }
 
       .author {
