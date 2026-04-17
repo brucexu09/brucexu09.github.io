@@ -1,3 +1,10 @@
 <div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+  <h3 class="category">Efficient Generative Modeling</h3>
+  {% bibliography --query @*[category=generative]* %}
+
+  <h3 class="category">Hardware/Algorithm Co-design and EDA</h3>
+  {% bibliography --query @*[category=codesign]* %}
+
+  <h3 class="category">Others</h3>
+  {% bibliography --query @*[category=others]* %}
 </div>
