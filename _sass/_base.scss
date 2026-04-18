@@ -1173,24 +1173,47 @@ html.transition *:after {
         letter-spacing: 0.01em;
       }
 
-      .lang-switch {
+      .lang-switcher {
         margin-left: auto;
-        appearance: none;
-        background: transparent;
+        display: inline-flex;
+        align-items: stretch;
         border: 1px solid
           color-mix(in srgb, var(--global-theme-color) 40%, transparent);
-        color: var(--global-theme-color);
-        padding: 0.15rem 0.7rem;
         border-radius: 999px;
-        font-size: 0.8rem;
-        line-height: 1.55;
-        cursor: pointer;
-        transition: all 0.15s ease;
+        overflow: hidden;
+        background: transparent;
 
-        &:hover {
-          background: var(--global-theme-color);
-          color: var(--global-hover-text-color);
-          border-color: var(--global-theme-color);
+        .lang-switch-btn {
+          appearance: none;
+          background: transparent;
+          border: 0;
+          color: var(--global-theme-color);
+          font-size: 0.78rem;
+          line-height: 1.55;
+          padding: 0.15rem 0.7rem;
+          cursor: pointer;
+          transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+
+          & + .lang-switch-btn {
+            border-left: 1px solid
+              color-mix(in srgb, var(--global-theme-color) 25%, transparent);
+          }
+
+          &:hover {
+            background: color-mix(
+              in srgb,
+              var(--global-theme-color) 10%,
+              transparent
+            );
+          }
+
+          &.is-active {
+            background: var(--global-theme-color);
+            color: var(--global-hover-text-color);
+            cursor: default;
+          }
         }
       }
     }
