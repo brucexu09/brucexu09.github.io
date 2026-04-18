@@ -34,6 +34,17 @@ ninja.data = [{
           window.location.href = "/blog/2026/from-ppo-to-search-r1-v2/";
         
       },
+    },{id: "post-from-ppo-to-search-r1-the-design-space-of-reasoning-and-agentic-rl",
+      
+        title: "From PPO to Search-R1: The Design Space of Reasoning and Agentic RL",
+      
+      description: "A component-by-component decomposition of PPO, walking through GRPO, verifiers, and retrieved-token masking to a complete instance of Agentic RL",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/from-ppo-to-search-r1-en/";
+        
+      },
     },{id: "news-one-paper-is-accepted-by-jssc",
           title: 'One paper is accepted by JSSC.',
           description: "",
