@@ -1401,6 +1401,12 @@ html.transition *:after {
       ol {
         padding-left: 1.2rem;
       }
+
+      // Drop kramdown's back-arrow links (↩ / ↩2 / ↩3 …); they clutter the
+      // reference list and readers just use browser back.
+      a.reversefootnote {
+        display: none;
+      }
     }
     sup a {
       border-bottom: none;
