@@ -1118,6 +1118,28 @@ html.transition *:after {
     margin-top: 1rem;
     margin-bottom: 2rem;
 
+    .lang-toggle {
+      display: inline-block;
+      margin: 0.3rem 0 0.6rem;
+      font-size: 0.85rem;
+
+      a {
+        color: var(--global-theme-color);
+        text-decoration: none;
+        padding: 0.2rem 0.65rem;
+        border: 1px solid
+          color-mix(in srgb, var(--global-theme-color) 45%, transparent);
+        border-radius: 999px;
+        transition: all 0.15s ease;
+
+        &:hover {
+          background: var(--global-theme-color);
+          color: var(--global-hover-text-color);
+          text-decoration: none;
+        }
+      }
+    }
+
     .post-title {
       font-family:
         "Inter",

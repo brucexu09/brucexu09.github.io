@@ -5,6 +5,8 @@ date: 2026-04-17
 description: "按组件拆解 PPO，然后沿 GRPO、Verifier、Retrieved Token Masking 一路梳理到 Agentic RL 的完整实例"
 tags: reinforcement-learning llm reasoning agentic-rl ppo grpo
 categories: technical-notes
+lang: zh
+alt: /blog/2026/from-ppo-to-search-r1-en/
 giscus_comments: false
 related_posts: false
 toc:

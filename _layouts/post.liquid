@@ -17,6 +17,13 @@ layout: default
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.alt %}
+      <div class="lang-toggle">
+        <a href="{{ page.alt | relative_url }}">
+          {% if page.lang == "zh" %}Read in English →{% else %}中文版 →{% endif %}
+        </a>
+      </div>
+    {% endif %}
     <p class="post-meta">
       Created in {{ page.date | date: '%B %d, %Y' }}
       {% if page.author %}by {{ page.author }}{% endif %}
