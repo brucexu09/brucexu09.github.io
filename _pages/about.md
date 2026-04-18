@@ -29,6 +29,5 @@ I received my M.S. in Electrical and Computer Engineering from the University of
 
 **Research focus**
 
-- Efficient Generative Modeling
-- Hardware / Algorithm Co-design & EDA
-- Multimodal & World Models
+- Efficient Generative Modeling and Multimodal & Interactive World Modeling
+- Hardware / Algorithm Co-design & ML Systems & Electronic Design Automation
