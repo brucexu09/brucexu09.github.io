@@ -23,26 +23,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-从-ppo-到-search-r1-reasoning-与-agentic-rl-的设计空间",
-      
-        title: "从 PPO 到 Search-R1：Reasoning 与 Agentic RL 的设计空间",
-      
-      description: "按组件拆解 PPO，然后沿 GRPO、Verifier、Retrieved Token Masking 一路梳理到 Agentic RL 的完整实例",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2026/from-ppo-to-search-r1-v2/";
-        
-      },
-    },{id: "post-from-ppo-to-search-r1-the-design-space-of-reasoning-and-agentic-rl",
+        },{id: "post-from-ppo-to-search-r1-the-design-space-of-reasoning-and-agentic-rl",
       
         title: "From PPO to Search-R1: The Design Space of Reasoning and Agentic RL",
       
-      description: "A component-by-component decomposition of PPO, walking through GRPO, verifiers, and retrieved-token masking to a complete instance of Agentic RL",
+      description: "A component-by-component decomposition of PPO through GRPO, verifiers, and retrieved-token masking to a complete instance of Agentic RL.",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/from-ppo-to-search-r1-en/";
+          window.location.href = "/blog/2026/from-ppo-to-search-r1/";
         
       },
     },{id: "news-one-paper-is-accepted-by-jssc",
