@@ -1058,6 +1058,14 @@ html.transition *:after {
     letter-spacing: -0.005em;
   }
 
+  > article > .section-lede {
+    color: var(--global-text-color-light);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
