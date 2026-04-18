@@ -1175,13 +1175,28 @@ html.transition *:after {
 
       .lang-switcher {
         margin-left: auto;
+        position: relative;
         display: inline-flex;
         align-items: stretch;
+        padding: 2px;
         border: 1px solid
           color-mix(in srgb, var(--global-theme-color) 40%, transparent);
         border-radius: 999px;
-        overflow: hidden;
         background: transparent;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 2px;
+          bottom: 2px;
+          left: 2px;
+          width: calc(50% - 2px);
+          border-radius: 999px;
+          background: var(--global-theme-color);
+          transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 0;
+          pointer-events: none;
+        }
 
         .lang-switch-btn {
           appearance: none;
@@ -1190,27 +1205,15 @@ html.transition *:after {
           color: var(--global-theme-color);
           font-size: 0.78rem;
           line-height: 1.55;
-          padding: 0.15rem 0.7rem;
+          padding: 0.1rem 0.75rem;
           cursor: pointer;
-          transition:
-            background-color 0.15s ease,
-            color 0.15s ease;
-
-          & + .lang-switch-btn {
-            border-left: 1px solid
-              color-mix(in srgb, var(--global-theme-color) 25%, transparent);
-          }
-
-          &:hover {
-            background: color-mix(
-              in srgb,
-              var(--global-theme-color) 10%,
-              transparent
-            );
-          }
+          position: relative;
+          z-index: 1;
+          min-width: 2.8rem;
+          text-align: center;
+          transition: color 0.18s ease;
 
           &.is-active {
-            background: var(--global-theme-color);
             color: var(--global-hover-text-color);
             cursor: default;
           }
@@ -1218,6 +1221,7 @@ html.transition *:after {
       }
     }
   }
+
 
   // Bilingual language toggle: default English, switch via root attribute.
   // `.lang-content` spans wrap the inline title variants; `.lang-content` divs
@@ -1424,6 +1428,9 @@ html[data-post-lang="zh"] .lang-content.lang-zh {
 }
 html[data-post-lang="zh"] div.lang-content.lang-zh {
   display: block;
+}
+html[data-post-lang="zh"] .lang-switcher::before {
+  transform: translateX(100%);
 }
 
 progress {
