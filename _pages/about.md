@@ -24,8 +24,3 @@ I am a final-year Ph.D. student in Electrical and Computer Engineering at UC San
 Since 2025, my research has focused on efficient and scalable multimodal generative models and world models.
 
 I received my M.S. in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. David Blaauw (IEEE Fellow) and Prof. Dennis Sylvester (IEEE Fellow), and my B.S. in Electronic Engineering from the University of Electronic Science and Technology of China.
-
-**Research focus**
-
-- Efficient Generative Modeling and Multimodal & Interactive World Modeling
-- Hardware / Algorithm Co-design & ML Systems & Electronic Design Automation

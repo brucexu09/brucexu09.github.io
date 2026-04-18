@@ -1066,6 +1066,17 @@ html.transition *:after {
     margin-bottom: 1rem;
   }
 
+  > article > .research-focus-list {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+  }
+
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
