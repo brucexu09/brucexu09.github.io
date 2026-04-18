@@ -1611,11 +1611,11 @@ Verifier                       广义概念：判断正确性的函数/模型
 
 ### References
 
-[^ppo]: Schulman et al. (2017). Proximal Policy Optimization Algorithms. arXiv:1707.06347
-[^gae]: Schulman et al. (2015). High-Dimensional Continuous Control Using Generalized Advantage Estimation. arXiv:1506.02438
-[^grpo]: Shao et al. (2024). DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models. arXiv:2402.03300
-[^sr1]: Jin et al. (2025). Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning. arXiv:2503.09516
-[^k3]: Schulman, J. (2020). Approximating KL Divergence. http://joschu.net/blog/kl-approx.html
-[^r1]: Guo et al. (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. arXiv:2501.12948
-[^dpo]: Rafailov et al. (2023). Direct Preference Optimization: Your Language Model is Secretly a Reward Model.
-[^instructgpt]: Ouyang et al. (2022). Training language models to follow instructions with human feedback.
+[^ppo]: Schulman et al. (2017). Proximal Policy Optimization Algorithms. [arXiv:1707.06347](https://arxiv.org/abs/1707.06347)
+[^gae]: Schulman et al. (2015). High-Dimensional Continuous Control Using Generalized Advantage Estimation. [arXiv:1506.02438](https://arxiv.org/abs/1506.02438)
+[^grpo]: Shao et al. (2024). DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models. [arXiv:2402.03300](https://arxiv.org/abs/2402.03300)
+[^sr1]: Jin et al. (2025). Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning. [arXiv:2503.09516](https://arxiv.org/abs/2503.09516)
+[^k3]: Schulman, J. (2020). Approximating KL Divergence. <http://joschu.net/blog/kl-approx.html>
+[^r1]: Guo et al. (2025). DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. [arXiv:2501.12948](https://arxiv.org/abs/2501.12948)
+[^dpo]: Rafailov et al. (2023). Direct Preference Optimization: Your Language Model is Secretly a Reward Model. [arXiv:2305.18290](https://arxiv.org/abs/2305.18290)
+[^instructgpt]: Ouyang et al. (2022). Training language models to follow instructions with human feedback. [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
