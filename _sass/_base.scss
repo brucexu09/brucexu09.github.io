@@ -1048,6 +1048,16 @@ html.transition *:after {
 
 // Extra Markdown style (post Customization)
 .post {
+  // Spacing for section headings on the home page (News / Latest Posts /
+  // Selected Publications). They sit as direct children of <article>.
+  > article > h2 {
+    margin-top: 2.2rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
