@@ -899,6 +899,13 @@ footer.sticky-bottom {
         line-height: 1.25;
       }
 
+      .internship-note {
+        color: var(--global-text-color-light);
+        font-size: 0.82rem;
+        font-style: italic;
+        margin: 0.15rem 0 0.2rem 0;
+      }
+
       .author {
         a {
           border-bottom: 1px dashed var(--global-theme-color);
