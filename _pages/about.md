@@ -13,13 +13,16 @@ profile:
   more_info: >
     <p>4164 Harold Frank Hall</p>
     <p>Santa Barbara, CA 93106</p>
+    <p><a href="mailto:boxunxu@ucsb.edu">boxunxu@ucsb.edu</a></p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a final-year Ph.D. student in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof. Peng Li (IEEE Fellow). My research interests focus on the intersection of machine learning and computer architecture. Specifically, **brain-inspired machine learning**, **efficient ML systems**, and **multimodal content generation**. I received consecutive **William J. McCalla Best Paper Award** nominations at ICCAD 2024 and ICCAD 2025. I also completed research internships at Meta in 2024 and at Meta Superintelligence Labs (MSL) in 2025.
+I am a final-year Ph.D. student in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof. Peng Li (IEEE Fellow). My research focuses on **efficient generative models**, **multimodal content generation**, and **ML systems & hardware co-design**. I received consecutive **William J. McCalla Best Paper Award** nominations at ICCAD 2024 and ICCAD 2025.
+
+I completed research internships at Meta in 2024 and at Meta Superintelligence Labs (MSL) in 2025. At MSL, I developed **Video Sparse Attention (VSA)** on **MovieGen-30B**, enabling **1.55× tuning-free end-to-end speedup** for video generation.
 
 Since 2025, my research has focused on efficient and scalable multimodal generative models and world models.
 
