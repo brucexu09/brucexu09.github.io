@@ -32,21 +32,20 @@ layout: default
             cache_bust=true
           %}
         {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% if page.profile.more_info or page.social %}
+          <div class="profile-meta">
+            {% if page.profile.more_info %}
+              <div class="more-info">{{ page.profile.more_info }}</div>
+            {% endif %}
+            {% if page.social %}
+              <div class="contact-icons">{% include social.liquid %}</div>
+            {% endif %}
+          </div>
         {% endif %}
       </div>
     {% endif %}
 
     <div class="clearfix">{{ content }}</div>
-
-    <!-- Social / contact -->
-    {% if page.social %}
-      <div class="social social-inline">
-        <div class="contact-icons">{% include social.liquid %}</div>
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
 
     <!-- Research focus -->
     <h2>Research Focus</h2>

@@ -7,8 +7,7 @@ first_name: Boxun Xu
 middle_name: 
 last_name: 
 # email: boxunxu@ucsb.edu
-contact_note: >
-  Best reached by email.
+contact_note: ""
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Boxun Xu — UCSB Ph.D. candidate working on efficient generative modeling and HW/algorithm co-design.
 footer_text: >

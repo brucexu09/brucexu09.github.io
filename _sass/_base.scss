@@ -413,32 +413,49 @@ ul.task-list input[type="checkbox"] {
 
 // Social (bottom)
 
-// Inline variant: social strip sits right after the bio (not as a page footer).
-// Icons are smaller and left-aligned under the bio column.
-.social.social-inline {
-  text-align: left;
-  margin: 1.2rem 0 0.5rem;
+// Profile block: place the social icon row directly to the right of the
+// address under the photo. Icons stay in the profile column (left side of
+// the page) so contact info is seen on first scan without bloating the page.
+.profile {
+  .profile-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .more-info {
+    margin: 0;
+  }
 
   .contact-icons {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
 
     a {
       display: inline-block;
-      margin-right: 0.9rem;
+      margin-right: 0.55rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       img,
       svg {
-        width: 1.4rem;
-        height: 1.4rem;
+        width: 1.2rem;
+        height: 1.2rem;
         margin-bottom: 0;
       }
-    }
-  }
 
-  .contact-note {
-    margin-top: 0.3rem;
-    text-align: left;
-    color: var(--global-text-color-light);
+      i::before {
+        color: var(--global-text-color);
+        transition: color 0.2s ease-in-out;
+      }
+
+      &:hover i::before {
+        color: var(--global-theme-color);
+      }
+    }
   }
 }
 
