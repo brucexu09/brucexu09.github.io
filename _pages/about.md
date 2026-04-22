@@ -21,6 +21,6 @@ social: true # includes social icons at the bottom of the page
 
 I am a final-year Ph.D. candidate in Electrical and Computer Engineering at UC Santa Barbara, advised by Prof. Peng Li (IEEE Fellow). My research focuses on efficient generative models, multimodal content generation, and ML systems & hardware co-design, building toward scalable, real-time multimodal and world models. I received consecutive **William J. McCalla Best Paper Award** nominations at ICCAD 2024 and ICCAD 2025.
 
-I interned at Meta (2024) and Meta Superintelligence Labs (2025), where I developed Video Sparse Attention (VSA) on MovieGen-30B, delivering **1.55× tuning-free end-to-end speedup** for video generation.
+I interned at Meta (2024) and Meta Superintelligence Labs (2025), where I developed Video Sparse Attention (VSA) on MovieGen-30B, delivering **1.55× tuning-free end-to-end speedup**, and led the **256-GPU sparse-finetuning pipeline** that further improved generation quality.
 
 Prior to UCSB, I received my M.S. in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. David Blaauw (IEEE Fellow) and Prof. Dennis Sylvester (IEEE Fellow), and my B.S. in Electronic Engineering from the University of Electronic Science and Technology of China.
