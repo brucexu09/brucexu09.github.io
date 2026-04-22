@@ -3,7 +3,7 @@ layout: about
 title: Home
 permalink: /
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-subtitle: <a href='#'>University of California, Santa Barbara</a> &nbsp;·&nbsp; <a href='mailto:boxunxu@ucsb.edu'>boxunxu@ucsb.edu</a>
+subtitle: <a href='#'>University of California, Santa Barbara</a>.
 
 profile:
   align: left

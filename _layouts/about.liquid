@@ -40,6 +40,14 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Social / contact -->
+    {% if page.social %}
+      <div class="social social-inline">
+        <div class="contact-icons">{% include social.liquid %}</div>
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
     <!-- Research focus -->
     <h2>Research Focus</h2>
     <ul class="research-focus-list">
@@ -72,15 +80,6 @@ layout: default
         I have published papers in top conferences in machine learning / computer architecture / design automation, including ISCA, AAAI, CVPR, ICCV, ICCAD, TCAD and JSSC.
       </p>
       {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
     {% endif %}
 
     <!-- Visitor Map -->

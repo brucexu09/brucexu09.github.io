@@ -413,6 +413,35 @@ ul.task-list input[type="checkbox"] {
 
 // Social (bottom)
 
+// Inline variant: social strip sits right after the bio (not as a page footer).
+// Icons are smaller and left-aligned under the bio column.
+.social.social-inline {
+  text-align: left;
+  margin: 1.2rem 0 0.5rem;
+
+  .contact-icons {
+    font-size: 1.6rem;
+
+    a {
+      display: inline-block;
+      margin-right: 0.9rem;
+
+      img,
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .contact-note {
+    margin-top: 0.3rem;
+    text-align: left;
+    color: var(--global-text-color-light);
+  }
+}
+
 .social {
   text-align: center;
 
