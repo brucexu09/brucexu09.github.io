@@ -89,7 +89,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Notes
-blog_description: research notes on ML systems, efficient generation, and RL
+blog_description: My research notes on ML systems, efficient generation, and agentic RL
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
