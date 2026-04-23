@@ -441,9 +441,7 @@ ul.task-list input[type="checkbox"] {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 0.45rem;
-    margin-left: auto;
+    gap: 0.5rem;
 
     a {
       display: inline-flex;
