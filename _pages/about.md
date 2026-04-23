@@ -3,7 +3,7 @@ layout: about
 title: Home
 permalink: /
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-subtitle: <a href='https://www.ucsb.edu/'>University of California, Santa Barbara</a>.
+subtitle: Ph.D. Candidate &middot; Electrical and Computer Engineering &middot; <a href='https://www.ucsb.edu/'>UC Santa Barbara</a>
 
 profile:
   align: left
