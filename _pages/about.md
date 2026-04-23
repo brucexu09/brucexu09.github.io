@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a final-year Ph.D. candidate in Electrical and Computer Engineering at [UC Santa Barbara](https://www.ucsb.edu/), advised by Prof. [Peng Li](https://engineering.ucsb.edu/people/peng-li) (IEEE Fellow). My research focuses on efficient generative models, multimodal content generation, and ML systems & hardware co-design, building toward scalable, real-time multimodal and world models. I received consecutive **William J. McCalla Best Paper Award** nominations at [ICCAD 2024](https://2024.iccad.com/) and [ICCAD 2025](https://2025.iccad.com/).
+I am a final-year Ph.D. candidate in Electrical and Computer Engineering at [UC Santa Barbara](https://www.ucsb.edu/), advised by Prof. [Peng Li](https://engineering.ucsb.edu/people/peng-li) (IEEE Fellow). My research focuses on efficient generative models, multimodal content generation, and ML systems & hardware co-design, building toward scalable, real-time multimodal and world models. I received consecutive William J. McCalla Best Paper Award nominations at [ICCAD 2024](https://2024.iccad.com/) and [ICCAD 2025](https://2025.iccad.com/).
 
 I interned at Meta (2024) and Meta Superintelligence Labs (2025), where I integrated Video Sparse Attention into MovieGen-30B, delivering 1.55× tuning-free end-to-end speedup and scaling sparse-finetuning to 256 H100s.
 
