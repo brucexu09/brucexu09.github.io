@@ -7,8 +7,8 @@ subtitle: Ph.D. Candidate, <a href='https://www.ucsb.edu/'>UC Santa Barbara</a>
 
 profile:
   align: left
-  # image: prof_pic.jpg
-  image: profile_at_LA.jpg
+  # image: profile_at_LA.jpg
+  image: profile_nobg.PNG
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>4164 Harold Frank Hall</p>
