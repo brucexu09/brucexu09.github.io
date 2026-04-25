@@ -4,8 +4,8 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Boxun Xu
-middle_name: 
-last_name: 
+middle_name:
+last_name:
 # email: boxunxu@ucsb.edu
 contact_note: ""
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -67,7 +67,6 @@ max_width: 930px
 serve_og_meta: false # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
-
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification

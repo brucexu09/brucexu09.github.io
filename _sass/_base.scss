@@ -454,11 +454,7 @@ ul.task-list input[type="checkbox"] {
       width: 2.1rem;
       height: 2.1rem;
       border-radius: 50%;
-      background: color-mix(
-        in srgb,
-        var(--global-theme-color) 9%,
-        transparent
-      );
+      background: color-mix(in srgb, var(--global-theme-color) 9%, transparent);
       transition:
         background-color 0.18s ease,
         transform 0.18s ease;
@@ -789,7 +785,6 @@ footer.sticky-bottom {
 
 // Publications
 
-
 .pub-legend {
   display: flex;
   flex-wrap: wrap;
@@ -800,11 +795,7 @@ footer.sticky-bottom {
   margin: 0.4rem 0 1.5rem;
   border: 1px solid var(--global-divider-color);
   border-radius: 6px;
-  background: color-mix(
-    in srgb,
-    var(--global-theme-color) 3%,
-    transparent
-  );
+  background: color-mix(in srgb, var(--global-theme-color) 3%, transparent);
 
   .representative-star {
     color: var(--global-theme-color);
@@ -849,11 +840,7 @@ footer.sticky-bottom {
     margin-top: 1.4rem;
     margin-bottom: 0.6rem;
     border-left: 4px solid var(--global-theme-color);
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--global-theme-color) 12%, transparent),
-      transparent 90%
-    );
+    background: linear-gradient(90deg, color-mix(in srgb, var(--global-theme-color) 12%, transparent), transparent 90%);
     border-radius: 2px;
   }
 
@@ -896,11 +883,7 @@ footer.sticky-bottom {
       transition: background-color 0.15s ease;
 
       &:hover {
-        background-color: color-mix(
-          in srgb,
-          var(--global-theme-color) 3%,
-          transparent
-        );
+        background-color: color-mix(in srgb, var(--global-theme-color) 3%, transparent);
       }
 
       .preview {
@@ -954,11 +937,7 @@ footer.sticky-bottom {
         padding: 0.25rem 0.75rem;
         margin: 0.35rem 0 0.3rem 0;
         border-left: 3px solid var(--global-theme-color);
-        background: linear-gradient(
-          90deg,
-          color-mix(in srgb, var(--global-theme-color) 8%, transparent),
-          transparent 85%
-        );
+        background: linear-gradient(90deg, color-mix(in srgb, var(--global-theme-color) 8%, transparent), transparent 85%);
         border-radius: 2px;
 
         &::before {
@@ -1237,11 +1216,7 @@ html.transition *:after {
         display: inline-block;
         padding: 0.08rem 0.55rem;
         border-radius: 999px;
-        background: color-mix(
-          in srgb,
-          var(--global-theme-color) 8%,
-          transparent
-        );
+        background: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
         color: var(--global-theme-color);
         font-size: 0.78rem;
         line-height: 1.5;
@@ -1254,8 +1229,7 @@ html.transition *:after {
         display: inline-flex;
         align-items: stretch;
         padding: 2px;
-        border: 1px solid
-          color-mix(in srgb, var(--global-theme-color) 40%, transparent);
+        border: 1px solid color-mix(in srgb, var(--global-theme-color) 40%, transparent);
         border-radius: 999px;
         background: transparent;
 
@@ -1296,7 +1270,6 @@ html.transition *:after {
       }
     }
   }
-
 
   // Bilingual language toggle: default English, switch via root attribute.
   // `.lang-content` spans wrap the inline title variants; `.lang-content` divs
@@ -1361,8 +1334,7 @@ html.transition *:after {
     a {
       color: var(--global-theme-color);
       text-decoration: none;
-      border-bottom: 1px solid
-        color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--global-theme-color) 35%, transparent);
       transition: border-color 0.15s ease;
 
       &:hover {
@@ -1431,11 +1403,7 @@ html.transition *:after {
       line-height: 1.55;
 
       thead {
-        background: color-mix(
-          in srgb,
-          var(--global-theme-color) 5%,
-          transparent
-        );
+        background: color-mix(in srgb, var(--global-theme-color) 5%, transparent);
       }
 
       th,
@@ -1448,8 +1416,7 @@ html.transition *:after {
         overflow-wrap: break-word;
       }
       th {
-        border-bottom: 2px solid
-          color-mix(in srgb, var(--global-text-color) 80%, transparent);
+        border-bottom: 2px solid color-mix(in srgb, var(--global-text-color) 80%, transparent);
         font-weight: 600;
         white-space: nowrap;
       }

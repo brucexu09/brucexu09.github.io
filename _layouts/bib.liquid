@@ -50,7 +50,12 @@
       <div class="award-prefix">🏆 {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' }}</div>
     {% endif %}
     <!-- Title -->
-    <div class="title">{% if entry.representative %}<span class="representative-star" title="Representative work">★</span> {% endif %}{{ entry.title }}</div>
+    <div class="title">
+      {% if entry.representative -%}
+        <span class="representative-star" title="Representative work">★</span>
+      {% endif -%}
+      {{- entry.title }}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -193,7 +198,6 @@
 
     <!-- Links/Buttons -->
     <div class="links">
-
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       {% endif %}
