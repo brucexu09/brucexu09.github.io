@@ -417,12 +417,17 @@ ul.task-list input[type="checkbox"] {
 // the same row, all under the photo. Kept in the profile column so contact
 // info surfaces on first scan without the old oversized page-footer block.
 .profile {
+  overflow: hidden;
+
   .profile-meta {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.6rem;
     margin-top: 0.6rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .more-info {
