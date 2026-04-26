@@ -207,7 +207,9 @@ ul.task-list input[type="checkbox"] {
 // Profile
 
 .profile {
-  width: 100%;
+  // Mobile: cap photo column so it's not the entire screen width
+  width: 45%;
+  max-width: 240px;
 
   .more-info {
     margin-bottom: 5px;
