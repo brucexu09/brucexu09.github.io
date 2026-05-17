@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Post-Training 面试速记: 从分词到对齐"
-date: 2026-05-17 12:00:00-0700
+date: 2026-05-16 23:00:00-0700
 description: "从 MinHash 去重到 BPE/WordPiece/Unigram、Softmax 手推、RM/PPO/GRPO/DPO，整理后训练全栈面试要点。"
 tags: post-training rlhf tokenizer ppo grpo dpo
 categories: notes
