@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-from-ppo-to-search-r1-the-design-space-of-reasoning-and-agentic-rl",
+        },{id: "post-post-training-面试速记-从分词到对齐",
+      
+        title: "Post-Training 面试速记: 从分词到对齐",
+      
+      description: "从 MinHash 去重到 BPE/WordPiece/Unigram、Softmax 手推、RM/PPO/GRPO/DPO，整理后训练全栈面试要点。",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/post-training-interview-notes/";
+        
+      },
+    },{id: "post-from-ppo-to-search-r1-the-design-space-of-reasoning-and-agentic-rl",
       
         title: "From PPO to Search-R1: The Design Space of Reasoning and Agentic RL",
       
