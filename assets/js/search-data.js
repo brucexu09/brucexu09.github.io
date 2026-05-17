@@ -27,7 +27,7 @@ ninja.data = [{
       
         title: "Post-Training 面试速记: 从分词到对齐",
       
-      description: "从 MinHash 去重到 BPE/WordPiece/Unigram、Softmax 手推、FlashAttention、RM/PPO/GRPO/DPO，每节给出 Key Insight、实现层次图、代码骨架和高频追问。",
+      description: "从 MinHash 去重到 BPE/WordPiece/Unigram、Softmax 手推、FlashAttention、RM/PPO/GRPO/DPO，每节给出 Key Insight、实现层次图、代码骨架、推导和高频追问。",
       section: "Posts",
       handler: () => {
         
