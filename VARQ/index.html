@@ -27,7 +27,8 @@
       <nav class="nav wrap" aria-label="Main navigation">
         <a class="wordmark" href="#">VAR<span>-Q</span><span class="logo-grid" aria-hidden="true">▦</span></a>
         <div class="nav-links">
-          <a href="#results">Results</a><a href="#method">Method</a><a href="#benchmarks">Benchmarks</a><a href="#code">Code</a>
+          <a href="#results">Results</a><a href="#method">Method</a> <a href="#attribution">Attribution</a><a href="#benchmarks">Benchmarks</a
+          ><a href="#code">Code</a>
         </div>
         <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
       </nav>
@@ -256,6 +257,167 @@
               <p>A scale or frame defines a block. VAR-Q reuses these boundaries, with no outlier detection, calibration data, or retraining.</p>
             </article>
           </div>
+          <figure class="paper-figure structure-figure">
+            <a href="assets/cache-structure.webp" data-zoom data-caption="Measured KV-cache structure across five visual AR models · Figure 4"
+              ><img
+                src="assets/cache-structure.webp"
+                width="2400"
+                height="787"
+                alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks."
+                loading="lazy"
+            /></a>
+            <figcaption>
+              <strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
+              4 of the paper.
+            </figcaption>
+          </figure>
+
+          <section class="attribution-section" id="attribution" aria-labelledby="attribution-title">
+            <div class="attribution-heading">
+              <p class="eyebrow">Mechanistic attribution · Section 3.3</p>
+              <h2 id="attribution-title">Where do the outliers come from?</h2>
+              <p>
+                The two-axis pattern has a mechanism behind it. We trace the key cache through its projection chain, then separate persistent channel
+                structure from position-dependent block dynamics.
+              </p>
+            </div>
+            <article class="attribution-row persistence-row">
+              <div class="attribution-copy">
+                <p class="evidence-label">01 / Architecture or input?</p>
+                <h3>K and V share a structure,<br />but not the same source.</h3>
+                <p>
+                  If outlier channels are tied to the architecture, they should recur across different prompts. Among the top 1% of channels,
+                  <strong>53–62% of K outliers persist across all 10 prompts</strong>, compared with only <strong>7–14% for V</strong>.
+                </p>
+                <p>
+                  This supports a persistent architectural component in K. V outlier identity changes much more with the input. The remaining
+                  experiments trace this architectural component through the K projection chain.
+                </p>
+              </div>
+              <figure class="attribution-figure persistence-figure">
+                <a href="assets/attribution-persistence.webp" data-zoom data-caption="Cross-prompt outlier persistence in K and V · Figure 5"
+                  ><img
+                    src="assets/attribution-persistence.webp"
+                    width="840"
+                    height="532"
+                    alt="At ten prompts, K versus V outlier persistence is 0.54 versus 0.14 on Self-Forcing, 0.53 versus 0.12 on LongLive, and 0.62 versus 0.07 on InfinityStar."
+                    loading="lazy"
+                /></a>
+                <figcaption>
+                  <strong>Cross-prompt persistence.</strong> Fraction of one prompt’s top-1% outlier channels that remain outliers under every prompt.
+                  Figure 5.
+                </figcaption>
+              </figure>
+            </article>
+            <article class="attribution-channel">
+              <div class="attribution-row channel-intro">
+                <div class="attribution-copy">
+                  <p class="evidence-label">02 / The channel axis</p>
+                  <h3>Three operations compound<br />the K outlier structure.</h3>
+                </div>
+                <p class="channel-intro-copy">
+                  Projection weights seed the imbalance. Normalization gains can amplify it. RoPE redistributes it between paired channels. Each stage
+                  contributes to predicting which channels become outliers.
+                </p>
+              </div>
+              <div class="projection-chain" aria-label="Key projection attribution chain">
+                <div>
+                  <span class="chain-symbol">W<sub>K</sub></span>
+                  <h4>Seed</h4>
+                  <p>Heavy-tailed row norms in the key projection create an initial channel-magnitude imbalance.</p>
+                </div>
+                <span class="chain-arrow" aria-hidden="true">→</span>
+                <div>
+                  <span class="chain-symbol">γ<sub>K</sub></span>
+                  <h4>Amplify</h4>
+                  <p>Where post-projection RMSNorm is present, its learned channel gains amplify this imbalance.</p>
+                </div>
+                <span class="chain-arrow" aria-hidden="true">→</span>
+                <div>
+                  <span class="chain-symbol">RoPE</span>
+                  <h4>Redistribute</h4>
+                  <p>Rotation scatters magnitude between paired channels while preserving each pair’s ℓ<sub>2</sub> norm.</p>
+                </div>
+              </div>
+              <div class="attribution-row channel-evidence">
+                <div class="attribution-copy">
+                  <p class="evidence-label">The evidence</p>
+                  <p>
+                    At the top 1%, <strong>W<sub>K</sub> alone recovers 35–42% of final K outliers</strong>. Adding γ<sub>K</sub> improves recall;
+                    including RoPE scattering brings the full chain to <strong>55–63× random recall</strong>.
+                  </p>
+                  <p>
+                    As a control, W<sub>V</sub> predicts V outliers at only 5–6× random recall. Weight structure explains much more of K’s outlier
+                    identity than V’s.
+                  </p>
+                </div>
+                <figure class="attribution-figure">
+                  <a
+                    href="assets/attribution-channel.webp"
+                    data-zoom
+                    data-caption="Progressive attribution of K outliers: projection weights, RMSNorm gain, and RoPE scattering · Figure 6"
+                    ><img
+                      src="assets/attribution-channel.webp"
+                      width="1912"
+                      height="656"
+                      alt="Outlier recall across Self-Forcing, LongLive, and InfinityStar increases as key projection weights, normalization gains and RoPE scattering are included. Full-chain recall at the top 1 percent is 57, 55, and 63 times random."
+                      loading="lazy"
+                  /></a>
+                  <figcaption>
+                    <strong>Progressive attribution.</strong> Recall of final outlier channels as projection-chain components are added; W<sub>V</sub>
+                    is the control. Multipliers are relative to random recall at the same selection rate. Figure 6.
+                  </figcaption>
+                </figure>
+              </div>
+            </article>
+            <article class="attribution-row rope-row">
+              <div class="attribution-copy">
+                <p class="evidence-label">03 / The block axis</p>
+                <h3>RoPE moves magnitude<br />between channels over time.</h3>
+                <p>
+                  RoPE’s angle changes with position. For a paired set of K channels, this produces cosine and sine modulation: one channel can become
+                  large while its partner becomes small, even without a change in the underlying input amplitude.
+                </p>
+                <div class="rope-equations" aria-label="Paired channel magnitudes are M times the absolute cosine and sine of theta">
+                  <span>|K<sub>2i</sub>| = M |cos θ|</span><span>|K<sub>2i+1</sub>| = M |sin θ|</span
+                  ><small>θ = bω<sub>i</sub> + φ · b is the block index</small>
+                </div>
+                <p>
+                  The pair’s per-token ℓ<sub>2</sub> norm is conserved. Individual channel magnitudes are not.
+                  <strong>Fast-rotating pairs produce stronger cross-block swings</strong>; slow pairs remain comparatively stable.
+                </p>
+              </div>
+              <figure class="attribution-figure">
+                <a
+                  href="assets/attribution-rope.webp"
+                  data-zoom
+                  data-caption="RoPE-attributable block outliers and paired-channel magnitude trajectories on Self-Forcing · Figure 7"
+                  ><img
+                    src="assets/attribution-rope.webp"
+                    width="1912"
+                    height="616"
+                    alt="Self-Forcing: RoPE-attributable outliers concentrate in low-index fast-rotating channel pairs. The two channel magnitudes oscillate in anti-phase across frames while their pair envelope remains approximately flat."
+                    loading="lazy"
+                /></a>
+                <figcaption>
+                  <strong>RoPE isolates a block-axis mechanism.</strong> On Self-Forcing, attributable outliers concentrate in fast-rotating pairs
+                  (left). Paired channel maxima swap magnitude while the pair envelope stays approximately flat (right). Figure 7.
+                </figcaption>
+              </figure>
+            </article>
+            <div class="attribution-conclusion">
+              <span class="conclusion-mark" aria-hidden="true">↳</span>
+              <div>
+                <h3>Different mechanisms. One grouping rule.</h3>
+                <p>
+                  Persistent channel imbalance motivates <strong>per-channel</strong> grouping. Cross-block magnitude shifts motivate
+                  <strong>block-aligned</strong> boundaries. V has weaker architectural attribution, but shares the measured two-axis structure—so
+                  VAR-Q applies the same channel × block rule to both caches.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <div class="grouping-demo">
             <div>
               <p class="eyebrow">Explore the grouping</p>
@@ -285,20 +447,6 @@
               <div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
             </div>
           </div>
-          <figure class="paper-figure structure-figure">
-            <a href="assets/cache-structure.webp" data-zoom data-caption="Measured KV-cache structure across five visual AR models · Figure 4"
-              ><img
-                src="assets/cache-structure.webp"
-                width="2400"
-                height="787"
-                alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks."
-                loading="lazy"
-            /></a>
-            <figcaption>
-              <strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
-              4 of the paper.
-            </figcaption>
-          </figure>
           <div class="pipeline">
             <div>
               <p class="eyebrow">From algorithm to memory savings</p>
