@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "Research",
-          description: "Publications grouped by research pillar.",
+          description: "Research in efficient visual generation, KV-cache compression, sparse attention, and hardware–algorithm co-design.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -83,6 +83,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-paper-on-vlm-hallucination-mitigation-vegas-accepted-at-cvpr-2026-findings",
           title: 'Paper on VLM hallucination mitigation (VEGAS) accepted at CVPR 2026 Findings.',
+          description: "",
+          section: "News",},{id: "news-var-q-will-appear-at-neurips-2026-our-project-page-is-now-live-featuring-tuning-free-kv-cache-quantization-for-autoregressive-image-and-video-generation-with-results-across-nine-models-read-the-paper",
+          title: 'VAR-Q will appear at NeurIPS 2026! Our project page is now live, featuring...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',

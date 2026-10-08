@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VAR-Q · Tuning-free KV Cache Quantization for Visual Generation</title>
+    <meta
+      name="description"
+      content="Tuning-free KV cache quantization for autoregressive image and video generation. One channel × block grouping rule, evaluated across nine visual AR models."
+    />
+    <meta name="theme-color" content="#f8f9fc" />
+    <link rel="canonical" href="https://boxunxu.top/VARQ/" />
+    <meta property="og:title" content="VAR-Q: Tuning-free KV Cache Quantization" />
+    <meta
+      property="og:description"
+      content="Low-bit KV caches for visual autoregressive image and video generation, without calibration or retraining."
+    />
+    <meta property="og:url" content="https://boxunxu.top/VARQ/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="wordmark" href="#">VAR<span>-Q</span><span class="logo-grid" aria-hidden="true">▦</span></a>
+        <div class="nav-links">
+          <a href="#results">Results</a><a href="#method">Method</a><a href="#benchmarks">Benchmarks</a><a href="#code">Code</a>
+        </div>
+        <a class="home-link" href="/">Boxun Xu <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="paper-title">
+        <p class="eyebrow"><span class="dot"></span> Image & video generation <span class="eyebrow-divider">/</span> NeurIPS 2026</p>
+        <h1 id="paper-title">
+          <span class="hero-name">VAR<span>-Q</span></span
+          ><span class="paper-title"
+            >Tuning-free KV Cache Quantization<br class="desktop-break" />
+            for Visual Autoregressive<br class="desktop-break" />
+            Image and Video Generation</span
+          >
+        </h1>
+        <p class="hero-summary">
+          Low-bit visual memory.<br class="mobile-break" />
+          No calibration. No retraining.
+        </p>
+        <p class="authors">
+          <a href="/">Boxun Xu<sup>1,†</sup></a
+          ><span>Jiaji Lu<sup>1,†</sup></span
+          ><span>Yuxuan Yin<sup>1</sup></span
+          ><span>Zihu Wang<sup>1</sup></span
+          ><span>Ziyue Liu<sup>1</sup></span
+          ><span>Yu Wang<sup>1</sup></span
+          ><span>Zirui Liu<sup>2</sup></span
+          ><span>Peng Li<sup>1</sup></span>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup> University of California, Santa Barbara</span><span><sup>2</sup> University of Minnesota</span>
+        </p>
+        <p class="equal">† Equal contribution · NeurIPS 2026</p>
+        <div class="actions">
+          <a class="button primary" href="/assets/pdf/VAR-Q.pdf">Read the paper <span aria-hidden="true">↗</span></a
+          ><a class="button" href="https://github.com/lujiaji/VAR-Q">View code <span aria-hidden="true">↗</span></a
+          ><a class="button text-button" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
+        </div>
+        <figure class="hero-figure">
+          <div class="figure-heading">
+            <span><strong>How much can 2 bits preserve?</strong><span class="figure-sub">Infinity-8B · Image generation</span></span
+            ><span class="precision-tag">KV cache: BF16 → INT2</span>
+          </div>
+          <div class="comparison-grid">
+            <div class="sample">
+              <div class="sample-label"><span>BF16</span><small>Reference</small></div>
+              <img
+                src="assets/cats-bf16.webp"
+                width="800"
+                height="800"
+                alt="BF16 reference: three cats at a table in front of a whiteboard reading VAR-Q saves memory."
+                fetchpriority="high"
+              />
+            </div>
+            <div class="sample">
+              <div class="sample-label"><span>FlexGen</span><small>INT2</small></div>
+              <img
+                src="assets/cats-flexgen.webp"
+                width="800"
+                height="800"
+                alt="FlexGen INT2 produces corrupted whiteboard text and a changed arrangement of cats."
+              />
+            </div>
+            <div class="sample">
+              <div class="sample-label"><span>KIVI</span><small>INT2</small></div>
+              <img src="assets/cats-kivi.webp" width="800" height="800" alt="KIVI INT2 changes the cats' arrangement and the whiteboard text." />
+            </div>
+            <div class="sample ours">
+              <div class="sample-label"><span>VAR-Q</span><small>INT2 · Ours</small></div>
+              <img
+                src="assets/cats-varq.webp"
+                width="800"
+                height="800"
+                alt="VAR-Q INT2 preserves readable VAR-Q saves memory text and three cats facing a table."
+              />
+            </div>
+          </div>
+          <figcaption>
+            At just 2 bits, VAR-Q preserves the text and scene layout in this example. Images from Figure 1; this qualitative example does not imply
+            lossless INT2 generation. <a href="#image-comparison">Inspect the comparison <span aria-hidden="true">↘</span></a>
+          </figcaption>
+        </figure>
+        <div class="stats" aria-label="Paper highlights">
+          <div>
+            <strong>78.5<span>%</span></strong>
+            <p>less KV memory, up to*</p>
+          </div>
+          <div>
+            <strong>6<span>×</span></strong>
+            <p>larger inference batches, up to*</p>
+          </div>
+          <div>
+            <strong>9</strong>
+            <p>visual AR models evaluated</p>
+          </div>
+          <div>
+            <strong>0</strong>
+            <p>calibration or retraining steps</p>
+          </div>
+        </div>
+        <p class="metric-note">
+          *Summary results reported in the paper. Gains depend on the model and precision; the batch-size result uses a single NVIDIA A100 80GB. See
+          the configurations below.
+        </p>
+      </section>
+
+      <section class="section intro-section" aria-labelledby="overview-title">
+        <div class="wrap intro-grid">
+          <div>
+            <p class="eyebrow">The idea</p>
+            <h2 id="overview-title">Visual generation has<br />a memory problem.</h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              As autoregressive models generate higher-resolution images and longer videos, their key–value caches can grow larger than the model
+              weights. Quantization reduces this footprint, but grouping rules developed for language models can damage visual generation.
+            </p>
+            <p>
+              <strong>VAR-Q follows the structure of visual memory.</strong> It quantizes each feature channel within each generation block—a scale or
+              a frame—using boundaries already provided by the generation loop. The same rule applies to both keys and values, across next-scale and
+              next-frame generation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / Generation quality</p>
+            <h2 id="results-title">See what stays.</h2>
+          </div>
+          <p>From image details to video trajectories,<br />compare low-bit caches with BF16.</p>
+        </div>
+        <div class="inspection-grid" id="image-comparison">
+          <div class="compare-tool">
+            <div class="compare-image" style="--split: 50%">
+              <img src="assets/cats-bf16.webp" width="800" height="800" alt="BF16 reference image" />
+              <div class="compare-overlay"><img id="compare-target" src="assets/cats-varq.webp" width="800" height="800" alt="VAR-Q at INT2" /></div>
+              <span class="image-badge left" id="compare-name">VAR-Q · INT2</span><span class="image-badge right">BF16</span
+              ><span class="compare-line" aria-hidden="true"><span>↔</span></span>
+            </div>
+            <label class="range-label" for="comparison-range">Drag to compare <span>Low-bit output / BF16 reference</span></label
+            ><input id="comparison-range" type="range" min="0" max="100" value="50" aria-label="Comparison split position" />
+          </div>
+          <div class="inspection-copy">
+            <span class="precision-tag">Infinity-8B · INT2</span>
+            <h3>Keep the words.<br />Keep the composition.</h3>
+            <p>
+              Examine the whiteboard text and the position of the cats. Switch methods to compare each low-bit output against the same BF16 reference.
+            </p>
+            <div class="segmented" role="group" aria-label="Image comparison method">
+              <button type="button" data-compare="varq" aria-pressed="true">VAR-Q</button
+              ><button type="button" data-compare="kivi" aria-pressed="false">KIVI</button
+              ><button type="button" data-compare="flexgen" aria-pressed="false">FlexGen</button>
+            </div>
+            <p class="small-note">
+              A selected example from Figure 1. Quantitative INT2 results and their quality tradeoffs are reported in Table 2 of the paper.
+            </p>
+            <a class="inline-link" href="assets/infinity-int2.webp" data-zoom data-caption="Infinity-8B at INT2 · Full comparison from Figure 26"
+              >More image examples <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <div class="video-section">
+          <div class="subsection-heading">
+            <div>
+              <p class="eyebrow">Across time</p>
+              <h3>One rule. Two video paradigms.</h3>
+            </div>
+            <label class="select-label"
+              >Video model<select id="video-model">
+                <option value="selfforcing">Self-Forcing · INT4</option>
+                <option value="infinitystar">InfinityStar · INT3</option>
+                <option value="longlive">LongLive · INT4</option>
+              </select></label
+            >
+          </div>
+          <figure class="paper-figure">
+            <a id="video-link" href="assets/selfforcing-int4.webp" data-zoom data-caption="Self-Forcing at INT4 · Figure 39"
+              ><img
+                id="video-figure"
+                src="assets/selfforcing-int4.webp"
+                width="2000"
+                height="1195"
+                alt="Self-Forcing INT4: four sampled frames for BF16, FlexGen, KIVI and VAR-Q, showing skyscrapers transforming into a robot."
+                loading="lazy"
+            /></a>
+            <figcaption>
+              <span id="video-caption">Self-Forcing · Next-frame generation · INT4 KV cache · Figure 39.</span> Sampled video frames from the paper;
+              select the figure to enlarge.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section method-section" id="method" aria-labelledby="method-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / The method</p>
+              <h2 id="method-title">Respect both axes.</h2>
+            </div>
+            <p>A channel × block view of the KV cache<br />explains where quantization groups belong.</p>
+          </div>
+          <div class="findings">
+            <article>
+              <span class="finding-number">01</span>
+              <h3>A few channels matter.</h3>
+              <p>
+                Masking just the top 0.5% of channels in LongLive collapses generation. Masking ten times as many inlier channels leaves quality
+                largely intact.
+              </p>
+            </article>
+            <article>
+              <span class="finding-number">02</span>
+              <h3>The structure is two-dimensional.</h3>
+              <p>
+                Large magnitudes persist along feature channels and shift across generation blocks. Grouping along only one axis misses part of the
+                structure.
+              </p>
+            </article>
+            <article>
+              <span class="finding-number">03</span>
+              <h3>The boundaries are already there.</h3>
+              <p>A scale or frame defines a block. VAR-Q reuses these boundaries, with no outlier detection, calibration data, or retraining.</p>
+            </article>
+          </div>
+          <div class="grouping-demo">
+            <div>
+              <p class="eyebrow">Explore the grouping</p>
+              <h3>One scale factor per<br />channel–block group.</h3>
+              <p id="group-description" aria-live="polite">
+                VAR-Q separates feature channels and generation blocks, so each group follows both axes of the cache.
+              </p>
+              <div class="group-options" role="group" aria-label="Quantization grouping">
+                <button type="button" data-group="tensor" aria-pressed="false">Per-tensor</button
+                ><button type="button" data-group="channel" aria-pressed="false">Per-channel</button
+                ><button type="button" data-group="joint" aria-pressed="true">Channel × block <span>VAR-Q</span></button>
+              </div>
+              <p class="small-note">Illustrative grouping diagram. Colors are schematic, not measured activations.</p>
+            </div>
+            <div class="matrix-area">
+              <span class="axis-title">Feature channels →</span>
+              <div class="matrix-row">
+                <span class="axis-side">Generation blocks →</span>
+                <div
+                  id="cache-matrix"
+                  class="cache-matrix joint"
+                  role="img"
+                  aria-label="Schematic cache with sixteen channels and three generation blocks; each channel within each block is a separate quantization group."
+                ></div>
+                <div class="block-labels"><span>Block 1</span><span>Block 2</span><span>Block 3</span></div>
+              </div>
+              <div class="matrix-legend"><span>Low magnitude</span><span class="color-scale"></span><span>High magnitude</span></div>
+            </div>
+          </div>
+          <figure class="paper-figure structure-figure">
+            <a href="assets/cache-structure.webp" data-zoom data-caption="Measured KV-cache structure across five visual AR models · Figure 4"
+              ><img
+                src="assets/cache-structure.webp"
+                width="2400"
+                height="787"
+                alt="Measured K and V cache magnitudes across five visual autoregressive models show persistent channel stripes and shifts across blocks."
+                loading="lazy"
+            /></a>
+            <figcaption>
+              <strong>The measured structure.</strong> Median absolute K and V values across five visual AR models. Color scales are per-panel. Figure
+              4 of the paper.
+            </figcaption>
+          </figure>
+          <div class="pipeline">
+            <div>
+              <p class="eyebrow">From algorithm to memory savings</p>
+              <h3>Quantize. Pack. Retrieve.</h3>
+              <p>
+                VAR-Q quantizes the cache per channel and block, then packs low-bit values into INT32 storage. Before attention, cached values are
+                unpacked and dequantized to BF16. Packing turns reduced precision into real KV-memory savings.
+              </p>
+              <a class="inline-link" href="/assets/pdf/VAR-Q.pdf#page=6">Read the algorithm <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure>
+              <a href="assets/pipeline.webp" data-zoom data-caption="VAR-Q quantization and bit-packing pipeline · Figure 8"
+                ><img
+                  src="assets/pipeline.webp"
+                  width="784"
+                  height="404"
+                  alt="VAR-Q pipeline: quantize K and V, pack into INT32 with scale factors, store in HBM, then unpack for attention."
+                  loading="lazy"
+              /></a>
+              <figcaption>Figure 8 · Algorithm and system support</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="benchmarks" aria-labelledby="benchmarks-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / The numbers</p>
+            <h2 id="benchmarks-title">Less cache.<br />Room for more.</h2>
+          </div>
+          <p>Reported quality and cache memory,<br />with the configuration kept in view.</p>
+        </div>
+        <div class="benchmark-controls">
+          <label class="select-label"
+            >Benchmark<select id="benchmark-model">
+              <option value="infinity">Infinity-8B · Image · INT4</option>
+              <option value="infinitystar">InfinityStar-8B · Video · INT3</option>
+              <option value="selfforcing">Self-Forcing-1.3B · Video · INT4</option>
+              <option value="longlive">LongLive-1.3B · Video · INT4</option>
+            </select></label
+          >
+          <p id="benchmark-setting" aria-live="polite">Text-to-image · batch size 6 · Table 2</p>
+        </div>
+        <div class="benchmark-panel">
+          <div class="memory-chart">
+            <span class="chart-title">KV cache memory <span>GB · lower is better</span></span>
+            <div class="bar-label"><span>BF16 reference</span><strong id="memory-base">67.43 GB</strong></div>
+            <div class="bar-track"><div class="bar baseline" style="width: 100%"></div></div>
+            <div class="bar-label">
+              <span>VAR-Q <span id="memory-bits">INT4</span></span
+              ><strong id="memory-ours">17.03 GB</strong>
+            </div>
+            <div class="bar-track"><div class="bar quantized" id="memory-bar" style="width: 25.25%"></div></div>
+            <p class="saving"><strong id="memory-saving">74.75%</strong> less KV cache memory</p>
+            <p class="small-note">Cache memory at the same batch size. These figures are not total GPU memory or an inference speedup.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption id="quality-caption">
+                DPG score ↑ · Infinity-8B
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">Precision</th>
+                  <th scope="col">Quality ↑</th>
+                  <th scope="col">KV (GB) ↓</th>
+                </tr>
+              </thead>
+              <tbody id="benchmark-rows">
+                <tr>
+                  <th scope="row">Reference</th>
+                  <td>BF16</td>
+                  <td>85.72</td>
+                  <td>67.43</td>
+                </tr>
+                <tr>
+                  <th scope="row">FlexGen</th>
+                  <td>INT4</td>
+                  <td>84.58</td>
+                  <td>17.38</td>
+                </tr>
+                <tr>
+                  <th scope="row">KIVI</th>
+                  <td>INT4</td>
+                  <td>85.74</td>
+                  <td>17.69</td>
+                </tr>
+                <tr class="highlight">
+                  <th scope="row">VAR-Q</th>
+                  <td>INT4</td>
+                  <td>85.90</td>
+                  <td>17.03</td>
+                </tr>
+              </tbody>
+            </table>
+            <p id="quality-note" class="small-note">
+              DPG measures prompt alignment. VAR-Q also scores 83.67 on GenEval, compared with 83.54 for BF16.
+            </p>
+          </div>
+        </div>
+        <p class="benchmark-footnote">
+          All values are reported in Tables 2–4 of the linked paper. Metrics differ across tasks and should be compared within a configuration.
+          <a href="/assets/pdf/VAR-Q.pdf#page=7">Read full results ↗</a>
+        </p>
+      </section>
+
+      <section class="section code-section" id="code" aria-labelledby="code-title">
+        <div class="wrap code-grid">
+          <div>
+            <p class="eyebrow">04 / Get started</p>
+            <h2 id="code-title">Bring VAR-Q<br />to your pipeline.</h2>
+            <p>
+              The public repository provides the core quantization and packing utilities, plus VAR and Infinity examples. Start with the
+              model-specific notebooks and follow the repository’s environment and checkpoint instructions.
+            </p>
+            <a class="button primary" href="https://github.com/lujiaji/VAR-Q">Explore the repository <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="code-card">
+            <div class="code-top"><span>Get the code</span><button type="button" class="copy-button" data-copy="clone-code">Copy</button></div>
+            <pre><code id="clone-code">git clone https://github.com/lujiaji/VAR-Q.git
+cd VAR-Q</code></pre>
+            <div class="notebook-links">
+              <a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_VAR.ipynb">VAR inference notebook <span>↗</span></a
+              ><a href="https://github.com/lujiaji/VAR-Q/blob/main/scripts/inference_single_Infinity.ipynb"
+                >Infinity inference notebook <span>↗</span></a
+              ><a href="https://github.com/lujiaji/VAR-Q/tree/main/VAR_Q">Quantization & packing utilities <span>↗</span></a>
+            </div>
+            <p class="small-note">
+              The paper evaluates image and video models. The linked public quick-start currently documents VAR and Infinity image generation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section wrap citation-section" id="citation" aria-labelledby="citation-title">
+        <div>
+          <p class="eyebrow">Reference</p>
+          <h2 id="citation-title">Citation</h2>
+          <p>If VAR-Q is useful for your research,<br />please cite the paper.</p>
+          <a class="inline-link" href="mailto:boxunxu@ucsb.edu">Contact the authors ↗</a>
+        </div>
+        <div class="citation-card">
+          <div class="code-top">
+            <span>BibTeX · NeurIPS 2026</span><button type="button" class="copy-button" data-copy="bibtex">Copy BibTeX</button>
+          </div>
+          <pre><code id="bibtex">@inproceedings{xu2026varq,
+  title = {VAR-Q: Tuning-free KV Cache Quantization
+           for Visual Autoregressive Image and Video Generation},
+  author = {Boxun Xu and Jiaji Lu and Yuxuan Yin and
+            Zihu Wang and Ziyue Liu and Yu Wang and
+            Zirui Liu and Peng Li},
+  year = {2026},
+  booktitle = {Advances in Neural Information Processing Systems},
+  url = {https://boxunxu.top/assets/pdf/VAR-Q.pdf}
+}</code></pre>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <a class="wordmark" href="#">VAR<span>-Q</span></a>
+      <p>University of California, Santa Barbara · University of Minnesota</p>
+      <a href="/">Back to Boxun Xu ↗</a>
+    </footer>
+    <dialog id="figure-dialog" aria-label="Enlarged research figure">
+      <div class="dialog-bar">
+        <p id="dialog-caption"></p>
+        <button type="button" id="close-dialog" aria-label="Close enlarged figure">Close ×</button>
+      </div>
+      <img id="dialog-image" alt="" />
+    </dialog>
+    <p id="copy-status" role="status" class="sr-only"></p>
+  </body>
+</html>

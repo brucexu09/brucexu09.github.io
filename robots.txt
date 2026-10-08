@@ -1,1 +1,1 @@
-User-agent: * Disallow: Sitemap: https://brucexu09.github.io/sitemap.xml
+User-agent: * Disallow: Sitemap: https://boxunxu.top/sitemap.xml
