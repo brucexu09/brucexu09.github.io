@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Research
-description: Publications grouped by research pillar.
+description: Research in efficient visual generation, KV-cache compression, sparse attention, and hardware–algorithm co-design.
 nav: true
 nav_order: 2
 ---
@@ -22,7 +22,7 @@ nav_order: 2
 <div class="publications">
 
 <h2 class="pillar">Efficient Generative Modeling</h2>
-<p class="pillar-intro">KV caching, sparse attention, and quantization for scalable visual & video autoregressive models.</p>
+<p class="pillar-intro">Adaptive KV caching, tuning-free quantization, and trainable sparse attention for scalable image and video autoregressive generation.</p>
 {% bibliography --query @*[category=generative]* --group_by none %}
 
 <h2 class="pillar">Hardware/Algorithm Co-design and EDA</h2>
