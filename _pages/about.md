@@ -23,6 +23,4 @@ I earned my Ph.D. in Electrical and Computer Engineering at [UC Santa Barbara](h
 
 I interned at Meta (2024) and Meta Superintelligence Labs (2025-2026), where I integrated Video Sparse Attention into [MovieGen-30B](https://ai.meta.com/research/movie-gen/), delivering 1.55× tuning-free end-to-end speedup, and extending it from inference to large-scale sparse distillation across 256 H100s.
 
-My work on visual autoregressive generation spans adaptive KV caching ([AMS-KV](/publications/#AMS-KV)), tuning-free low-bit KV quantization ([VAR-Q](/VARQ/)), and trainable sparse attention ([Sparse Forcing](https://boxunxu.top/SparseForcing/)). VAR-Q studies the channel–block structure of visual KV caches and applies a unified quantization rule across next-scale and next-frame generation.
-
 Prior to UCSB, I received my M.S. in Electrical and Computer Engineering from the University of Michigan, Ann Arbor, advised by Prof. [David Blaauw](https://blaauw.engin.umich.edu/) (IEEE Fellow) and Prof. [Dennis Sylvester](https://sylvester.engin.umich.edu/) (IEEE Fellow), and my B.S. in Electronic Engineering from the University of Electronic Science and Technology of China.
