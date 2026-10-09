@@ -19,10 +19,8 @@
             <th scope="row" style="width: 20%">
               {% if item.date_precision == 'year' %}
                 {{ item.date | date: '%Y' }}
-              {% elsif item.date_precision == 'month' %}
-                {{ item.date | date: '%b %Y' }}
               {% else %}
-                {{ item.date | date: '%b %d, %Y' }}
+                {{ item.date | date: '%Y.%m' }}
               {% endif %}
             </th>
             <td>
