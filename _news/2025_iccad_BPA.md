@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏆 Paper on 3D MoE spiking transformers nominated for the **William J. McCalla Best Paper Award** at ICCAD 2025 — second consecutive year.
+Our paper on 3D MoE spiking transformers was nominated for the **William J. McCalla Best Paper Award** at ICCAD 2025 for the second consecutive year.

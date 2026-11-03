@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Received **Second Place at the DAC Ph.D. Forum** and a travel grant from ACM SIGDA / IEEE CEDA.
+Won **second place at the DAC Ph.D. Forum**.

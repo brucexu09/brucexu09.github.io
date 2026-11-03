@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Awarded the **Radhakrishnan Nagarajan Family Fellowship** at UCSB.
+Received the **Radhakrishnan Nagarajan Family Fellowship** at UCSB.

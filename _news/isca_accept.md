@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper on heterogeneous-core acceleration of spiking transformers with error-constrained pruning accepted at ISCA 2025.
+Our paper on heterogeneous-core acceleration of spiking transformers with error-constrained pruning was accepted to ISCA 2025.

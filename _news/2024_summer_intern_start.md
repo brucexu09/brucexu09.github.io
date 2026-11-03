@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started summer internship at Meta AI, working on multi-teacher knowledge distillation of multi-modal multi-task foundation models.
+Started my summer internship at Meta AI, working on multi-teacher knowledge distillation for multimodal, multitask foundation models.

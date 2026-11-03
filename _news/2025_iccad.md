@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper on 3D MoE spiking transformer acceleration accepted at ICCAD 2025.
+Our paper on 3D MoE spiking transformer acceleration was accepted to ICCAD 2025.

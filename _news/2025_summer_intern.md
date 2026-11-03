@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joining **Meta Superintelligence Labs** this summer in Seattle, working on efficient movie generation.
+Joining **Meta Superintelligence Labs** this summer in Seattle to work on efficient video generation.

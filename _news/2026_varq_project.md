@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-[VAR-Q](/VARQ/) will appear at **NeurIPS 2026**! Our project page is now live, featuring tuning-free KV cache quantization for autoregressive image and video generation, with results across nine models. [Read the paper](/assets/pdf/VAR-Q.pdf).
+[VAR-Q](/VARQ/), our work on tuning-free KV cache quantization for visual autoregressive generation, was accepted to **NeurIPS 2026**. [Paper](/assets/pdf/VAR-Q.pdf).

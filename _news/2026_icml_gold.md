@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-Recognized as an **ICML 2026 Gold Reviewer**.
+Named an **ICML 2026 Gold Reviewer**.

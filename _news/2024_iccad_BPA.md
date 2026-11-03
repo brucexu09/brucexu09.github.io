@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏆 Paper on 3D spiking transformer accelerators nominated for the **William J. McCalla Best Paper Award** at ICCAD 2024.
+Our paper on 3D spiking transformer accelerators was nominated for the **William J. McCalla Best Paper Award** at ICCAD 2024.

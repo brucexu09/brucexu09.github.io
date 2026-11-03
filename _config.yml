@@ -9,7 +9,7 @@ last_name:
 # email: boxunxu@ucsb.edu
 contact_note: ""
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Boxun Xu — UCSB Ph.D. working on efficient generative modeling and HW/algorithm co-design.
+  Boxun Xu researches efficient and scalable AI through efficient modeling and high-performance machine learning systems.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -177,6 +177,7 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  - _posts/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
@@ -251,7 +252,7 @@ terser:
 # -----------------------------------------------------------------------------
 
 jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  enabled: [] # Blog posts and archives are hidden until the blog is ready.
   layouts:
     year: archive-year
     tag: archive-tag

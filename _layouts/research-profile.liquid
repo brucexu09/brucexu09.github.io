@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>
+      {% unless page.profile_view == 'home' %}{{ page.title | escape }} | {% endunless %}
+      Boxun Xu
+    </title>
+    <meta name="description" content="{{ page.description | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title | escape }} | Boxun Xu">
+    <meta property="og:description" content="{{ page.description | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ '/assets/img/profile.png' | absolute_url }}">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%90%3C/text%3E%3C/svg%3E"
+    >
+    <link rel="stylesheet" href="{{ '/assets/css/research-profile.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <script defer src="{{ '/assets/js/research-profile.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  </head>
+  <body>
+    {% include research-profile.liquid %}
+  </body>
+</html>
