@@ -55,6 +55,7 @@
     let visible = false;
     let manualPlay = false;
     let starting = false;
+    let autoplayBlocked = false;
     let generation = 0;
     const eligible = () =>
       visible &&
@@ -72,6 +73,7 @@
       generation += 1;
       starting = false;
       videos.forEach((video) => {
+        video.autoplay = false;
         video.pause();
         video.playbackRate = playbackRate;
       });
@@ -79,8 +81,10 @@
     };
     const play = (startLoading = false) => {
       // A direct play request starts loading on mobile, even before canplay fires.
+      if (startLoading === true) autoplayBlocked = false;
       if (
         !eligible() ||
+        autoplayBlocked ||
         (startLoading !== true && !ready()) ||
         videos.some((video) => video.error) ||
         starting ||
@@ -91,6 +95,7 @@
       const request = ++generation;
       Promise.allSettled(
         videos.map((video) => {
+          video.autoplay = true;
           video.playbackRate = playbackRate;
           return video.play();
         })
@@ -99,23 +104,30 @@
         starting = false;
         if (!eligible()) pause();
         else if (results.some((result) => result.status === "rejected")) {
-          pair.dataset.userPaused = "true";
+          // A browser rejection is not an explicit pause. Retry on re-entry.
+          autoplayBlocked = true;
           pause();
         }
         update();
       });
     };
-    const refresh = (startLoading = false) => {
-      if (eligible()) play(startLoading);
+    const refresh = () => {
+      if (eligible()) play(true);
       else pause();
     };
     videos.forEach((video) => {
       video.controls = false;
+      video.autoplay = false;
+      video.defaultMuted = true;
       video.muted = true;
+      video.playsInline = true;
       video.loop = true;
       video.defaultPlaybackRate = playbackRate;
       video.playbackRate = playbackRate;
-      video.addEventListener("play", update);
+      video.addEventListener("play", () => {
+        if (!eligible()) pause();
+        else update();
+      });
       video.addEventListener("pause", update);
       video.addEventListener("canplay", () => play());
       video.addEventListener("waiting", () => {
@@ -158,18 +170,19 @@
           videos.forEach((video) => {
             video.preload = "auto";
           });
-        refresh(visible);
+        refresh();
       },
       { threshold: 0.1 }
     );
     observer.observe(pair);
     document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("pageshow", refresh);
     root.addEventListener("bx:viewchange", refresh);
     reducedMotion.addEventListener("change", () => {
       manualPlay = false;
       refresh();
     });
-    update();
+    pause();
   });
 
   // Native content scrolling with a persistent, draggable scrollbar.
