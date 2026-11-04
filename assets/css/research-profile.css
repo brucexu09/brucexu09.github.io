@@ -1879,7 +1879,8 @@ body {
   top: 4px;
 }
 #bxp #bx-paper-var-q .bx-row-memory-varq {
-  top: calc(50% + 4px);
+  top: 50%;
+  margin-top: 4px;
 }
 
 @media (max-width: 900px) {
