@@ -234,6 +234,13 @@ body {
 #bxp .bx-video-toggle[data-paused="true"] .bx-play-mark {
   display: grid;
 }
+@media (pointer: coarse) {
+  #bxp .bx-play-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
 #bxp .bx-paper h4 {
   font-weight: 600;
   overflow-wrap: anywhere;
@@ -1955,4 +1962,17 @@ body {
 }
 #bxp #bx-paper-3d-moe-2025 .bx-paper-figure {
   align-items: center;
+}
+
+/* Keep the two research directions compact and readable. */
+#bxp .bx-interest-list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--bx-text);
+  font-weight: 400;
 }

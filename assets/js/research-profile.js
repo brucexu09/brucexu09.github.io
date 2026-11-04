@@ -77,8 +77,16 @@
       });
       update();
     };
-    const play = () => {
-      if (!eligible() || !ready() || starting || videos.every((video) => !video.paused)) return;
+    const play = (startLoading = false) => {
+      // A direct play request starts loading on mobile, even before canplay fires.
+      if (
+        !eligible() ||
+        (startLoading !== true && !ready()) ||
+        videos.some((video) => video.error) ||
+        starting ||
+        videos.every((video) => !video.paused)
+      )
+        return;
       starting = true;
       const request = ++generation;
       Promise.allSettled(
@@ -97,8 +105,8 @@
         update();
       });
     };
-    const refresh = () => {
-      if (eligible()) play();
+    const refresh = (startLoading = false) => {
+      if (eligible()) play(startLoading);
       else pause();
     };
     videos.forEach((video) => {
@@ -109,9 +117,10 @@
       video.playbackRate = playbackRate;
       video.addEventListener("play", update);
       video.addEventListener("pause", update);
-      video.addEventListener("canplay", play);
+      video.addEventListener("canplay", () => play());
       video.addEventListener("waiting", () => {
-        if (!ready()) pause();
+        // Initial buffering must not cancel the play request that triggered it.
+        if (!starting && !ready()) pause();
       });
       video.addEventListener("error", () => {
         pause();
@@ -139,7 +148,7 @@
       } else {
         pair.dataset.userPaused = "false";
         manualPlay = true;
-        play();
+        play(true);
       }
     });
     const observer = new IntersectionObserver(
@@ -149,7 +158,7 @@
           videos.forEach((video) => {
             video.preload = "auto";
           });
-        refresh();
+        refresh(visible);
       },
       { threshold: 0.1 }
     );
